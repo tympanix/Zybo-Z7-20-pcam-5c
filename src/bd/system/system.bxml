@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="33">
+<Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1537348748"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1537348748"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1537348748"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1537348748"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1548620037"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1548620037"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1548620037"/>
+    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1548620037"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_AXI_BayerToRGB_1_0\system_AXI_BayerToRGB_1_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI_BayerToRGB_1"/>
+        <Instance HierarchyPath="camera_in/AXI_BayerToRGB_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -16,7 +16,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_AXI_GammaCorrection_0_0\system_AXI_GammaCorrection_0_0.xci" Type="IP">
-        <Instance HierarchyPath="AXI_GammaCorrection_0"/>
+        <Instance HierarchyPath="camera_in/AXI_GammaCorrection_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -24,7 +24,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_MIPI_CSI_2_RX_0_0\system_MIPI_CSI_2_RX_0_0.xci" Type="IP">
-        <Instance HierarchyPath="MIPI_CSI_2_RX_0"/>
+        <Instance HierarchyPath="camera_in/MIPI_CSI_2_RX_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -32,7 +32,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_MIPI_D_PHY_RX_0_0\system_MIPI_D_PHY_RX_0_0.xci" Type="IP">
-        <Instance HierarchyPath="MIPI_D_PHY_RX_0"/>
+        <Instance HierarchyPath="camera_in/MIPI_D_PHY_RX_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -40,7 +40,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_axi_mem_intercon_0\system_axi_mem_intercon_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon"/>
+        <Instance HierarchyPath="control_block/axi_mem_intercon"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -48,7 +48,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_axi_mem_intercon_1_0\system_axi_mem_intercon_1_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon_1"/>
+        <Instance HierarchyPath="control_block/axi_mem_intercon_1"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -64,7 +64,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_clk_wiz_0_0\system_clk_wiz_0_0.xci" Type="IP">
-        <Instance HierarchyPath="clk_wiz_0"/>
+        <Instance HierarchyPath="control_block/clk_wiz_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -72,7 +72,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
-        <Instance HierarchyPath="processing_system7_0"/>
+        <Instance HierarchyPath="control_block/processing_system7_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -80,7 +80,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_ps7_0_axi_periph_0\system_ps7_0_axi_periph_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph"/>
+        <Instance HierarchyPath="control_block/ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -88,7 +88,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_rgb2dvi_0_0\system_rgb2dvi_0_0.xci" Type="IP">
-        <Instance HierarchyPath="rgb2dvi_0"/>
+        <Instance HierarchyPath="video_out/rgb2dvi_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -96,7 +96,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_rst_clk_wiz_0_50M_0\system_rst_clk_wiz_0_50M_0.xci" Type="IP">
-        <Instance HierarchyPath="rst_clk_wiz_0_50M"/>
+        <Instance HierarchyPath="control_block/rst_clk_wiz_0_50M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -104,7 +104,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_rst_vid_clk_dyn_0\system_rst_vid_clk_dyn_0.xci" Type="IP">
-        <Instance HierarchyPath="rst_vid_clk_dyn"/>
+        <Instance HierarchyPath="video_out/rst_vid_clk_dyn"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -112,7 +112,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_v_axi4s_vid_out_0_0\system_v_axi4s_vid_out_0_0.xci" Type="IP">
-        <Instance HierarchyPath="v_axi4s_vid_out_0"/>
+        <Instance HierarchyPath="video_out/v_axi4s_vid_out_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -120,7 +120,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_vtg_0\system_vtg_0.xci" Type="IP">
-        <Instance HierarchyPath="vtg"/>
+        <Instance HierarchyPath="video_out/vtg"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -128,7 +128,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_xlconcat_0_0\system_xlconcat_0_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconcat_0"/>
+        <Instance HierarchyPath="control_block/xlconcat_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -136,7 +136,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_DVIClocking_0_0\system_DVIClocking_0_0.xci" Type="IP">
-        <Instance HierarchyPath="DVIClocking_0"/>
+        <Instance HierarchyPath="video_out/DVIClocking_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -144,7 +144,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_video_dynclk_1\system_video_dynclk_1.xci" Type="IP">
-        <Instance HierarchyPath="video_dynclk"/>
+        <Instance HierarchyPath="video_out/video_dynclk"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -152,7 +152,31 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_xbar_0\system_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
+        <Instance HierarchyPath="control_block/ps7_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_auto_pc_2\system_auto_pc_2.xci" Type="IP">
+        <Instance HierarchyPath="control_block/ps7_0_axi_periph/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_auto_pc_1\system_auto_pc_1.xci" Type="IP">
+        <Instance HierarchyPath="control_block/axi_mem_intercon_1/s00_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_auto_pc_0\system_auto_pc_0.xci" Type="IP">
+        <Instance HierarchyPath="control_block/axi_mem_intercon/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -169,51 +193,12 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_auto_pc_2\system_auto_pc_2.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\system_auto_pc_1\system_auto_pc_1.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon_1/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\system_auto_pc_0\system_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="system_ooc.xdc" Type="XDC">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="OUT_OF_CONTEXT"/>
-      </File>
-      <File Name="hw_handoff\system.hwh" Type="HwHandoff">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="HW_HANDOFF"/>
-      </File>
-      <File Name="hw_handoff\system_bd.tcl">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="HW_HANDOFF"/>
-      </File>
-      <File Name="synth\system.hwdef">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="HW_HANDOFF"/>
       </File>
     </FileCollection>
   </CompositeFile>
