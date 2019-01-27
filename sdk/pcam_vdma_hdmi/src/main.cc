@@ -13,7 +13,7 @@
 
 #define IRPT_CTL_DEVID 		XPAR_PS7_SCUGIC_0_DEVICE_ID
 #define GPIO_DEVID			XPAR_PS7_GPIO_0_DEVICE_ID
-#define GPIO_IRPT_ID			XPAR_PS7_GPIO_0_INTR
+#define GPIO_IRPT_ID		XPAR_PS7_GPIO_0_INTR
 #define CAM_I2C_DEVID		XPAR_PS7_I2C_0_DEVICE_ID
 #define CAM_I2C_IRPT_ID		XPAR_PS7_I2C_0_INTR
 #define VDMA_DEVID			XPAR_AXIVDMA_0_DEVICE_ID
@@ -24,7 +24,7 @@
 #define DDR_BASE_ADDR		XPAR_DDR_MEM_BASEADDR
 #define MEM_BASE_ADDR		(DDR_BASE_ADDR + 0x0A000000)
 
-#define GAMMA_BASE_ADDR     XPAR_AXI_GAMMACORRECTION_0_BASEADDR
+#define GAMMA_BASE_ADDR     XPAR_CAMERA_IN_AXI_GAMMACORRECTION_0_BASEADDR
 
 using namespace digilent;
 
@@ -33,8 +33,8 @@ void pipeline_mode_change(AXI_VDMA<ScuGicInterruptController>& vdma_driver, OV56
 	//Bring up input pipeline back-to-front
 	{
 		vdma_driver.resetWrite();
-		MIPI_CSI_2_RX_mWriteReg(XPAR_MIPI_CSI_2_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, (CR_RESET_MASK & ~CR_ENABLE_MASK));
-		MIPI_D_PHY_RX_mWriteReg(XPAR_MIPI_D_PHY_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, (CR_RESET_MASK & ~CR_ENABLE_MASK));
+		MIPI_CSI_2_RX_mWriteReg(XPAR_CAMERA_IN_MIPI_CSI_2_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, (CR_RESET_MASK & ~CR_ENABLE_MASK));
+		MIPI_D_PHY_RX_mWriteReg(XPAR_CAMERA_IN_MIPI_D_PHY_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, (CR_RESET_MASK & ~CR_ENABLE_MASK));
 		cam.reset();
 	}
 
@@ -47,8 +47,8 @@ void pipeline_mode_change(AXI_VDMA<ScuGicInterruptController>& vdma_driver, OV56
 
 	{
 		vdma_driver.enableWrite();
-		MIPI_CSI_2_RX_mWriteReg(XPAR_MIPI_CSI_2_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, CR_ENABLE_MASK);
-		MIPI_D_PHY_RX_mWriteReg(XPAR_MIPI_D_PHY_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, CR_ENABLE_MASK);
+		MIPI_CSI_2_RX_mWriteReg(XPAR_CAMERA_IN_MIPI_CSI_2_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, CR_ENABLE_MASK);
+		MIPI_D_PHY_RX_mWriteReg(XPAR_CAMERA_IN_MIPI_D_PHY_RX_0_S_AXI_LITE_BASEADDR, CR_OFFSET, CR_ENABLE_MASK);
 		cam.set_mode(mode);
 		cam.set_awb(OV5640_cfg::awb_t::AWB_ADVANCED);
 	}
@@ -82,9 +82,9 @@ int main()
 	AXI_VDMA<ScuGicInterruptController> vdma_driver(VDMA_DEVID, MEM_BASE_ADDR, irpt_ctl,
 			VDMA_MM2S_IRPT_ID,
 			VDMA_S2MM_IRPT_ID);
-	VideoOutput vid(XPAR_VTC_0_DEVICE_ID, XPAR_VIDEO_DYNCLK_DEVICE_ID);
+	VideoOutput vid(XPAR_VIDEO_OUT_VTG_DEVICE_ID, XPAR_VIDEO_OUT_VIDEO_DYNCLK_DEVICE_ID);
 
-	pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1920_1080_60_PP, OV5640_cfg::mode_t::MODE_1080P_1920_1080_30fps);
+	pipeline_mode_change(vdma_driver, cam, vid, Resolution::R1280_720_60_PP, OV5640_cfg::mode_t::MODE_720P_1280_720_60fps);
 
 
 	xil_printf("Video init done.\r\n");
@@ -98,6 +98,7 @@ int main()
 	uint8_t read_char5 = 0;
 	uint16_t reg_addr;
 	uint8_t reg_value;
+	uint32_t color_values;
 
 	while (1) {
 		xil_printf("\r\n\r\n\r\nPcam 5C MAIN OPTIONS\r\n");
